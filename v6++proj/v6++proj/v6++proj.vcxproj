@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5781CDD0-E6AC-4410-BA7C-21094316F0F0}</ProjectGuid>
+    <RootNamespace>v6proj</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ReferencePath>$(VC_ReferencesPath_x86);</ReferencePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\include;</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dev\ATADriver.cpp" />
+    <ClCompile Include="dev\BlockDevice.cpp" />
+    <ClCompile Include="dev\BufferManager.cpp" />
+    <ClCompile Include="dev\DeviceManager.cpp" />
+    <ClCompile Include="dev\DMA.cpp" />
+    <ClCompile Include="fs\File.cpp" />
+    <ClCompile Include="fs\FileManager.cpp" />
+    <ClCompile Include="fs\FileSystem.cpp" />
+    <ClCompile Include="fs\INode.cpp" />
+    <ClCompile Include="fs\OpenFileManager.cpp" />
+    <ClCompile Include="interrupt\DiskInterrupt.cpp" />
+    <ClCompile Include="interrupt\Exception.cpp" />
+    <ClCompile Include="interrupt\KeyboardInterrupt.cpp" />
+    <ClCompile Include="interrupt\SystemCall.cpp" />
+    <ClCompile Include="interrupt\TimeInterrupt.cpp" />
+    <ClCompile Include="kernel\Utility.cpp" />
+    <ClCompile Include="kernel\Video.cpp" />
+    <ClCompile Include="lib\src\double.c" />
+    <ClCompile Include="lib\src\file.c" />
+    <ClCompile Include="lib\src\float.c" />
+    <ClCompile Include="lib\src\malloc.c" />
+    <ClCompile Include="lib\src\print_parse.c" />
+    <ClCompile Include="lib\src\sprintf.c" />
+    <ClCompile Include="lib\src\stdio.c" />
+    <ClCompile Include="lib\src\stdlib.c" />
+    <ClCompile Include="lib\src\string.c" />
+    <ClCompile Include="lib\src\sys.c" />
+    <ClCompile Include="lib\src\time.c" />
+    <ClCompile Include="machine\Chip8253.cpp" />
+    <ClCompile Include="machine\Chip8259A.cpp" />
+    <ClCompile Include="machine\CMOSTime.cpp" />
+    <ClCompile Include="machine\GDT.cpp" />
+    <ClCompile Include="machine\IDT.cpp" />
+    <ClCompile Include="machine\PageDirectory.cpp" />
+    <ClCompile Include="machine\TaskStateSegment.cpp" />
+    <ClCompile Include="mm\Allocator.cpp" />
+    <ClCompile Include="mm\KernelAllocator.cpp" />
+    <ClCompile Include="mm\New.cpp" />
+    <ClCompile Include="mm\PageManager.cpp" />
+    <ClCompile Include="mm\SwapperManager.cpp" />
+    <ClCompile Include="pe\PEParser.cpp" />
+    <ClCompile Include="proc\MemoryDescriptor.cpp" />
+    <ClCompile Include="proc\Process.cpp" />
+    <ClCompile Include="proc\ProcessManager.cpp" />
+    <ClCompile Include="proc\Text.cpp" />
+    <ClCompile Include="proc\User.cpp" />
+    <ClCompile Include="program\cat.c" />
+    <ClCompile Include="program\copyfile.c" />
+    <ClCompile Include="program\cp.c" />
+    <ClCompile Include="program\date.c" />
+    <ClCompile Include="program\echo.c" />
+    <ClCompile Include="program\forks.c" />
+    <ClCompile Include="program\ls.c" />
+    <ClCompile Include="program\mkdir.c" />
+    <ClCompile Include="program\mygetpid.c" />
+    <ClCompile Include="program\performance.c" />
+    <ClCompile Include="program\rm.c" />
+    <ClCompile Include="program\shutdown.c" />
+    <ClCompile Include="program\sig.c" />
+    <ClCompile Include="program\test.c" />
+    <ClCompile Include="program\trace.c" />
+    <ClCompile Include="shell\CommandTree.c" />
+    <ClCompile Include="shell\ExecuteCommand.c" />
+    <ClCompile Include="shell\main.c" />
+    <ClCompile Include="shell\PreExecute.c" />
+    <ClCompile Include="test\dev\TestBufferManager.cpp" />
+    <ClCompile Include="test\fs\TestFileSystem.cpp" />
+    <ClCompile Include="test\lib\Lib.cpp" />
+    <ClCompile Include="test\lib\TestLib.cpp" />
+    <ClCompile Include="test\main.cpp" />
+    <ClCompile Include="test\mm\TestAllocator.cpp" />
+    <ClCompile Include="test\mm\TestNew.cpp" />
+    <ClCompile Include="test\mm\TestPageManager.cpp" />
+    <ClCompile Include="test\mm\TestSwapperManager.cpp" />
+    <ClCompile Include="test\pe\TestPEParser.cpp" />
+    <ClCompile Include="test\TestUtility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Allocator.h" />
+    <ClInclude Include="include\Assembly.h" />
+    <ClInclude Include="include\ATADriver.h" />
+    <ClInclude Include="include\BlockDevice.h" />
+    <ClInclude Include="include\Buf.h" />
+    <ClInclude Include="include\BufferManager.h" />
+    <ClInclude Include="include\CharDevice.h" />
+    <ClInclude Include="include\Chip8253.h" />
+    <ClInclude Include="include\Chip8259A.h" />
+    <ClInclude Include="include\CMOSTime.h" />
+    <ClInclude Include="include\CRT.h" />
+    <ClInclude Include="include\DeviceManager.h" />
+    <ClInclude Include="include\DiskInterrupt.h" />
+    <ClInclude Include="include\DMA.h" />
+    <ClInclude Include="include\Exception.h" />
+    <ClInclude Include="include\File.h" />
+    <ClInclude Include="include\FileManager.h" />
+    <ClInclude Include="include\FileSystem.h" />
+    <ClInclude Include="include\GDT.h" />
+    <ClInclude Include="include\IDT.h" />
+    <ClInclude Include="include\INode.h" />
+    <ClInclude Include="include\IOPort.h" />
+    <ClInclude Include="include\Kernel.h" />
+    <ClInclude Include="include\KernelAllocator.h" />
+    <ClInclude Include="include\Keyboard.h" />
+    <ClInclude Include="include\KeyboardInterrupt.h" />
+    <ClInclude Include="include\Machine.h" />
+    <ClInclude Include="include\MapNode.h" />
+    <ClInclude Include="include\MemoryDescriptor.h" />
+    <ClInclude Include="include\New.h" />
+    <ClInclude Include="include\OpenFileManager.h" />
+    <ClInclude Include="include\PageDirectory.h" />
+    <ClInclude Include="include\PageManager.h" />
+    <ClInclude Include="include\PageTable.h" />
+    <ClInclude Include="include\PEParser.h" />
+    <ClInclude Include="include\Process.h" />
+    <ClInclude Include="include\ProcessManager.h" />
+    <ClInclude Include="include\Regs.h" />
+    <ClInclude Include="include\Simple.h" />
+    <ClInclude Include="include\SwapperManager.h" />
+    <ClInclude Include="include\SystemCall.h" />
+    <ClInclude Include="include\sys\param.h" />
+    <ClInclude Include="include\sys\types.h" />
+    <ClInclude Include="include\TaskStateSegment.h" />
+    <ClInclude Include="include\Text.h" />
+    <ClInclude Include="include\TimeInterrupt.h" />
+    <ClInclude Include="include\TTy.h" />
+    <ClInclude Include="include\User.h" />
+    <ClInclude Include="include\Utility.h" />
+    <ClInclude Include="include\Video.h" />
+    <ClInclude Include="lib\include\file.h" />
+    <ClInclude Include="lib\include\malloc.h" />
+    <ClInclude Include="lib\include\stdio.h" />
+    <ClInclude Include="lib\include\stdlib.h" />
+    <ClInclude Include="lib\include\string.h" />
+    <ClInclude Include="lib\include\sys.h" />
+    <ClInclude Include="lib\include\time.h" />
+    <ClInclude Include="lib\src\ctype.h" />
+    <ClInclude Include="lib\src\double.h" />
+    <ClInclude Include="lib\src\float.h" />
+    <ClInclude Include="lib\src\print_parse.h" />
+    <ClInclude Include="lib\src\valist.h" />
+    <ClInclude Include="program\GetOptAndPath.h" />
+    <ClInclude Include="shell\CommandTree.h" />
+    <ClInclude Include="shell\ExecuteCommand.h" />
+    <ClInclude Include="shell\globe.h" />
+    <ClInclude Include="shell\PreExecute.h" />
+    <ClInclude Include="test\dev\TestBufferManager.h" />
+    <ClInclude Include="test\fs\TestFileSystem.h" />
+    <ClInclude Include="test\KernelInclude.h" />
+    <ClInclude Include="test\lib\Lib.h" />
+    <ClInclude Include="test\lib\TestLib.h" />
+    <ClInclude Include="test\mm\TestAllocator.h" />
+    <ClInclude Include="test\mm\TestNew.h" />
+    <ClInclude Include="test\mm\TestPageManager.h" />
+    <ClInclude Include="test\mm\TestSwapperManager.h" />
+    <ClInclude Include="test\pe\TestPEParser.h" />
+    <ClInclude Include="test\TestInclude.h" />
+    <ClInclude Include="test\TestUtility.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

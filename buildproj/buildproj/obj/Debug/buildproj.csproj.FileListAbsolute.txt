@@ -1,0 +1,6 @@
+C:\Users\saika\Desktop\buildproj\buildproj\bin\Debug\buildproj.exe.config
+C:\Users\saika\Desktop\buildproj\buildproj\obj\Debug\buildproj.csprojResolveAssemblyReference.cache
+C:\Users\saika\Desktop\buildproj\buildproj\bin\Debug\buildproj.exe
+C:\Users\saika\Desktop\buildproj\buildproj\bin\Debug\buildproj.pdb
+C:\Users\saika\Desktop\buildproj\buildproj\obj\Debug\buildproj.exe
+C:\Users\saika\Desktop\buildproj\buildproj\obj\Debug\buildproj.pdb

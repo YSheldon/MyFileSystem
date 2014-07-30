@@ -1,0 +1,150 @@
+00000000000i[     ] Bochs x86 Emulator 2.4.2
+00000000000i[     ]   Build from CVS snapshot on November 12, 2009
+00000000000i[     ] System configuration
+00000000000i[     ]   processors: 1 (cores=1, HT threads=1)
+00000000000i[     ]   A20 line support: yes
+00000000000i[     ] CPU configuration
+00000000000i[     ]   level: 6
+00000000000i[     ]   SMP support: no
+00000000000i[     ]   APIC support: yes
+00000000000i[     ]   FPU support: yes
+00000000000i[     ]   MMX support: yes
+00000000000i[     ]   SSE support: 2
+00000000000i[     ]   CLFLUSH support: yes
+00000000000i[     ]   3dnow! support: no
+00000000000i[     ]   1G paging support: no
+00000000000i[     ]   x86-64 support: yes
+00000000000i[     ]   SEP support: yes
+00000000000i[     ]   MWAIT support: no
+00000000000i[     ]   XSAVE support: no
+00000000000i[     ]   AES support: no
+00000000000i[     ]   VMX support: no
+00000000000i[     ] Optimization configuration
+00000000000i[     ]   RepeatSpeedups support: yes
+00000000000i[     ]   Trace cache support: yes
+00000000000i[     ]   Fast function calls: yes
+00000000000i[     ] Devices configuration
+00000000000i[     ]   ACPI support: yes
+00000000000i[     ]   NE2000 support: yes
+00000000000i[     ]   PCI support: yes, enabled=yes
+00000000000i[     ]   SB16 support: yes
+00000000000i[     ]   USB support: yes
+00000000000i[     ]   VGA extension support: vbe cirrus
+00000000000i[MEM0 ] allocated memory at 034AE020. after alignment, vector=034AF000
+00000000000i[MEM0 ] 32.00MB
+00000000000i[MEM0 ] mem block size = 0x00100000, blocks=32
+00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('D:\data\study data\v6++\Bochs-2.4.2/BIOS-bochs-latest')
+00000000000i[MEM0 ] rom at 0xc0000/40448 ('D:\data\study data\v6++\Bochs-2.4.2/VGABIOS-lgpl-latest')
+00000000000i[CMOS ] Using local time for initial clock
+00000000000i[CMOS ] Setting initial clock to: Sun Apr 20 22:09:51 2014 (time0=1398002991)
+00000000000i[DMA  ] channel 4 used by cascade
+00000000000i[DMA  ] channel 2 used by Floppy Drive
+00000000000i[FDD  ] tried to open 'floppya.img' read/write: No such file or directory
+00000000000i[FDD  ] tried to open 'floppya.img' read only: No such file or directory
+00000000000i[FDD  ] tried to open 'floppyb.img' read/write: No such file or directory
+00000000000i[FDD  ] tried to open 'floppyb.img' read only: No such file or directory
+00000000000i[PCI  ] 440FX Host bridge present at device 0, function 0
+00000000000i[PCI  ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
+00000000000i[MEM0 ] Register memory access handlers: 0x000a0000 - 0x000bffff
+00000000000i[WGUI ] Desktop Window dimensions: 1366 x 768
+00000000000i[WGUI ] Number of Mouse Buttons = 7
+00000000000i[WGUI ] IME disabled
+00000000000i[KMAP ] Loading keymap from 'D:\data\study data\v6++\Bochs-2.4.2/keymaps/x11-pc-us.map'
+00000000000i[KMAP ] Loaded 168 symbols
+00000000000i[MEM0 ] Register memory access handlers: 0xe0000000 - 0xe0ffffff
+00000000000i[CLVGA] VBE Bochs Display Extension Enabled
+00000000000i[CLVGA] interval=50000
+00000000000i[     ] init_dev of 'unmapped' plugin device by virtual method
+00000000000i[     ] init_dev of 'biosdev' plugin device by virtual method
+00000000000i[     ] init_dev of 'speaker' plugin device by virtual method
+00000000000i[     ] init_dev of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] init_dev of 'gameport' plugin device by virtual method
+00000000000i[     ] init_dev of 'pci_ide' plugin device by virtual method
+00000000000i[PCI  ] PIIX3 PCI IDE controller present at device 1, function 1
+00000000000i[     ] init_dev of 'acpi' plugin device by virtual method
+00000000000i[PCI  ] ACPI Controller present at device 1, function 3
+00000000000i[     ] init_dev of 'ioapic' plugin device by virtual method
+00000000000i[IOAP ] initializing I/O APIC
+00000000000i[MEM0 ] Register memory access handlers: 0xfec00000 - 0xfec00fff
+00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
+00000000000i[KBD  ] will paste characters every 1000 keyboard ticks
+00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
+00000000000i[HD   ] HD on ata0-0: 'c.img' 'flat' mode 
+00000000000i[HD   ] translation on ata0-0 set to 'none'
+00000000000i[HD   ] Using boot sequence disk, none, none
+00000000000i[HD   ] Floppy boot signature check is enabled
+00000000000i[     ] init_dev of 'serial' plugin device by virtual method
+00000000000i[SER  ] com1 at 0x03f8 irq 4
+00000000000i[     ] init_dev of 'parallel' plugin device by virtual method
+00000000000i[PAR  ] parallel port 1 at 0x0378 irq 7
+00000000000i[     ] register state of 'unmapped' plugin device by virtual method
+00000000000i[     ] register state of 'biosdev' plugin device by virtual method
+00000000000i[     ] register state of 'speaker' plugin device by virtual method
+00000000000i[     ] register state of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] register state of 'gameport' plugin device by virtual method
+00000000000i[     ] register state of 'pci_ide' plugin device by virtual method
+00000000000i[     ] register state of 'acpi' plugin device by virtual method
+00000000000i[     ] register state of 'ioapic' plugin device by virtual method
+00000000000i[     ] register state of 'keyboard' plugin device by virtual method
+00000000000i[     ] register state of 'harddrv' plugin device by virtual method
+00000000000i[     ] register state of 'serial' plugin device by virtual method
+00000000000i[     ] register state of 'parallel' plugin device by virtual method
+00000000000i[SYS  ] bx_pc_system_c::Reset(HARDWARE) called
+00000000000i[CPU0 ] cpu hardware reset
+00000000000i[APIC0] allocate APIC id=0 (MMIO enabled) to 0xfee00000
+00000000000i[     ] reset of 'unmapped' plugin device by virtual method
+00000000000i[     ] reset of 'biosdev' plugin device by virtual method
+00000000000i[     ] reset of 'speaker' plugin device by virtual method
+00000000000i[     ] reset of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] reset of 'gameport' plugin device by virtual method
+00000000000i[     ] reset of 'pci_ide' plugin device by virtual method
+00000000000i[     ] reset of 'acpi' plugin device by virtual method
+00000000000i[     ] reset of 'ioapic' plugin device by virtual method
+00000000000i[     ] reset of 'keyboard' plugin device by virtual method
+00000000000i[     ] reset of 'harddrv' plugin device by virtual method
+00000000000i[     ] reset of 'serial' plugin device by virtual method
+00000000000i[     ] reset of 'parallel' plugin device by virtual method
+00000003305i[BIOS ] $Revision: 1.235 $ $Date: 2009/09/28 16:36:02 $
+00000200000i[WGUI ] dimension update x=720 y=400 fontheight=16 fontwidth=9 bpp=8
+00000318075i[KBD  ] reset-disable command received
+00000444795i[VBIOS] VGABios $Id: vgabios.c,v 1.69 2009/04/07 18:18:20 vruppert Exp $
+00000444866i[CLVGA] VBE known Display Interface b0c0
+00000444898i[CLVGA] VBE known Display Interface b0c5
+00000447823i[VBIOS] VBE Bios $Id: vbe.c,v 1.62 2009/01/25 15:46:25 vruppert Exp $
+00000754384i[BIOS ] Starting rombios32
+00000754881i[BIOS ] Shutdown flag 0
+00000755562i[BIOS ] ram_size=0x02000000
+00000756040i[BIOS ] ram_end=32MB
+00000796636i[BIOS ] Found 1 cpu(s)
+00000815761i[BIOS ] bios_table_addr: 0x000fba98 end=0x000fcc00
+00000815869i[PCI  ] 440FX PMC write to PAM register 59 (TLB Flush)
+00001143566i[PCI  ] 440FX PMC write to PAM register 59 (TLB Flush)
+00001471494i[P2I  ] PCI IRQ routing: PIRQA# set to 0x0b
+00001471515i[P2I  ] PCI IRQ routing: PIRQB# set to 0x09
+00001471536i[P2I  ] PCI IRQ routing: PIRQC# set to 0x0b
+00001471557i[P2I  ] PCI IRQ routing: PIRQD# set to 0x09
+00001471567i[P2I  ] write: ELCR2 = 0x0a
+00001472452i[BIOS ] PIIX3/PIIX4 init: elcr=00 0a
+00001480410i[BIOS ] PCI: bus=0 devfn=0x00: vendor_id=0x8086 device_id=0x1237 class=0x0600
+00001482972i[BIOS ] PCI: bus=0 devfn=0x08: vendor_id=0x8086 device_id=0x7000 class=0x0601
+00001485373i[BIOS ] PCI: bus=0 devfn=0x09: vendor_id=0x8086 device_id=0x7010 class=0x0101
+00001485603i[PIDE ] new BM-DMA address: 0xc000
+00001486307i[BIOS ] region 4: 0x0000c000
+00001488617i[BIOS ] PCI: bus=0 devfn=0x0b: vendor_id=0x8086 device_id=0x7113 class=0x0680
+00001488855i[ACPI ] new irq line = 11
+00001488869i[ACPI ] new irq line = 9
+00001488899i[ACPI ] new PM base address: 0xb000
+00001488913i[ACPI ] new SM base address: 0xb100
+00001488941i[PCI  ] setting SMRAM control register to 0x4a
+00001653035i[CPU0 ] Enter to System Management Mode
+00001653045i[CPU0 ] RSM: Resuming from System Management Mode
+00001817065i[PCI  ] setting SMRAM control register to 0x0a
+00001826234i[BIOS ] MP table addr=0x000fbb70 MPC table addr=0x000fbaa0 size=0xd0
+00001828176i[BIOS ] SMBIOS table addr=0x000fbb80
+00001830560i[BIOS ] ACPI tables: RSDP addr=0x000fbc90 ACPI DATA addr=0x01ff0000 size=0x988
+00001833799i[BIOS ] Firmware waking vector 0x1ff00cc
+00001844912i[PCI  ] 440FX PMC write to PAM register 59 (TLB Flush)
+00001845756i[BIOS ] bios_table_cur_addr: 0x000fbcb4
+00001858075i[BIOS ] ata0-0: PCHS=20/16/63 translation=none LCHS=20/16/63
+00005738303i[BIOS ] IDE time out
+00017824993i[BIOS ] Booting from 0000:7c00
