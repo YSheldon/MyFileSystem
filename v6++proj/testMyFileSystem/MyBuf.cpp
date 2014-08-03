@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
-const std::string DISK_PATH = "C:\\Users\\saika\\Desktop\\buildproj\\MyDiskInit\\bin\\Debug\\MyDisk.img"; // 磁盘文件路径
+const std::string DISK_PATH = "C:\\Users\\saika\\Documents\\GitHub\\MyFileSystem\\buildproj\\MyDiskInit\\bin\\Debug\\MyDisk.img"; // 磁盘文件路径
 
 
 Buf::Buf()

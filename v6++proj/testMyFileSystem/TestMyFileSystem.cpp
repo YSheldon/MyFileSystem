@@ -17,10 +17,26 @@ void ls()
 {
 
 }
-
+// int mode 1:read 2:write 3:read & write
 int fopen(char *name, int mode)
 {
-	int fd = m_FileManager.Open(name, mode);
+		int fmode;
+	switch (mode)
+	{
+	case 1:
+		fmode = File::FREAD;
+		break;
+	case 2:
+		fmode = File::FWRITE;
+		break;
+	case 3:
+		fmode = File::FREAD | File::FWRITE;
+		break;
+	default:
+		cout << "error mode" << endl;
+		return -1;
+	}
+	int fd = m_FileManager.Open(name, fmode);
 	if (fd >= 0)
 		cout << "the file number is :" << fd << endl;
 	else
@@ -33,7 +49,7 @@ void fclose(int fd)
 {
 	m_FileManager.Close(fd);
 }
-
+// int mode 1:read 2:write 3:read & write
 int fread(int fd, char *buffer, int length)
 {
 	int i = m_FileManager.Read(fd, buffer, length);
@@ -41,7 +57,7 @@ int fread(int fd, char *buffer, int length)
 		cout << "read failed" << endl;
 	return i;
 }
-
+// int mode 1:read 2:write 3:read & write
 int fwrite(int fd, char *buffer, int length)
 {
 	int i = m_FileManager.Write(fd, buffer, length);
@@ -56,10 +72,26 @@ void flseek(int fd, int position)
 	if (i < 0)
 		cout << "seek failed" << endl;
 }
-
+// int mode 1:read 2:write 3:read & write
 int fcreat(char *name, int mode)
 {
-	int i = m_FileManager.Creat(name, mode);
+	int fmode;
+	switch (mode)
+	{
+	case 1:
+		fmode = Inode::IREAD;
+		break;
+	case 2:
+		fmode = Inode::IWRITE;
+		break;
+	case 3:
+		fmode = Inode::IREAD | Inode::IWRITE;
+		break;
+	default:
+		cout << "error mode" << endl;
+		return -1;
+	}
+	int i = m_FileManager.Creat(name,fmode);
 	if (i < 0)
 		cout << "create failed" << endl;
 	return i;
@@ -80,16 +112,17 @@ int test_m_BufferManager()
 
 	return 0;
 }
+
 int main()
 {
 	m_FileSystem.LoadSuperBlock();
-//	fcreat("/home/test.txt", 0);
-	if (fopen("/home/test.txt", File::FREAD) + 1)
+	fcreat("/home/test.txt", 1);
+	if (fopen("/home/test.txt", 3) + 1)
 	{
 		//fclose(0);
-		char *content = "djskfjsdklfjsdklfjksdlfjkl;sdajfka;lsdjfkl;asdjfkl;sadjfkl;sdjfkla;sdjfk;lsadjf";
-		fwrite(0, content, strlen(content));
-		flseek(0, 1);
+//		char *content = "djskfjsdklfjsdklfjksdlfjkl;sdajfka;lsdjfkl;asdjfkl;sadjfkl;sdjfkla;sdjfk;lsadjf";
+//		fwrite(0, content, strlen(content));
+		flseek(0, 0);
 		char buffer[512];
 		int read = fread(0, buffer, 748);
 		if (read >= 0)
@@ -102,5 +135,6 @@ int main()
 	//cout << fdelete("/home/test.txt") << endl;
 	char c;
 	cin >> c;
+	m_InodeTable.UpdateInodeTable();
 	return 0;
 }

@@ -165,8 +165,15 @@ int FileManager::Read(int fd, char *buffer, int length)
 {
 	File* file = m_OpenFileTable.GetF(fd);
 	if (file == NULL)
+	{
 		return -1;
+	}
+	if (!(file->f_flag & File::FREAD))
+	{
+		return -1;
+	}
 	Inode* pInode = file->f_inode;
+		
 	if (file->f_offset >= pInode->i_size)
 		return 0;
 	int old_offset = file->f_offset;
@@ -178,9 +185,14 @@ int FileManager::Write(int fd, char *buffer,int length)
 {
 	File* file = m_OpenFileTable.GetF(fd);
 	if (file == NULL)
+	{
 		return -1;
+	}
+	if (!(file->f_flag & File::FWRITE))
+	{
+		return -1;
+	}
 	Inode* pInode = file->f_inode;
-
 	int hole = file->f_offset - pInode->i_size;
 	if (pInode->i_size > 0)
 		hole++;

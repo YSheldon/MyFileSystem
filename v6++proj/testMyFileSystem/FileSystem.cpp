@@ -28,7 +28,7 @@ FileSystem::FileSystem()
 
 FileSystem::~FileSystem()
 {
-	//nothing to do here
+	this->Update();
 }
 
 void FileSystem::Initialize()
