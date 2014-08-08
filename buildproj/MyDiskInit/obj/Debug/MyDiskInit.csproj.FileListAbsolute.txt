@@ -4,3 +4,9 @@ C:\Users\saika\Desktop\buildproj\MyDiskInit\bin\Debug\MyDiskInit.pdb
 C:\Users\saika\Desktop\buildproj\MyDiskInit\obj\Debug\MyDiskInit.csprojResolveAssemblyReference.cache
 C:\Users\saika\Desktop\buildproj\MyDiskInit\obj\Debug\MyDiskInit.exe
 C:\Users\saika\Desktop\buildproj\MyDiskInit\obj\Debug\MyDiskInit.pdb
+C:\Users\saika\Documents\GitHub\MyFileSystem\buildproj\MyDiskInit\bin\Debug\MyDiskInit.exe.config
+C:\Users\saika\Documents\GitHub\MyFileSystem\buildproj\MyDiskInit\obj\Debug\MyDiskInit.exe
+C:\Users\saika\Documents\GitHub\MyFileSystem\buildproj\MyDiskInit\obj\Debug\MyDiskInit.pdb
+C:\Users\saika\Documents\GitHub\MyFileSystem\buildproj\MyDiskInit\bin\Debug\MyDiskInit.exe
+C:\Users\saika\Documents\GitHub\MyFileSystem\buildproj\MyDiskInit\bin\Debug\MyDiskInit.pdb
+C:\Users\saika\Documents\GitHub\MyFileSystem\buildproj\MyDiskInit\obj\Debug\MyDiskInit.csprojResolveAssemblyReference.cache

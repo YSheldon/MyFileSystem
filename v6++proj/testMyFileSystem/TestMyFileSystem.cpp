@@ -1,26 +1,51 @@
 #include "FileManager.h"
+#include "Shell.h"
 #include <iostream>
 #include <string>
+#include "Utility.h"
+#include <vector>
 using namespace std;
 
+Inode CURRENT_DIR;// 当前目录
 string CURRENT_PATH;// 当前路径
 InodeTable m_InodeTable;
 OpenFileTable m_OpenFileTable;
 BufferManager m_BufferManager;
 SuperBlock	m_SuperBlock;
-Inode CURRENT_DIR;
 FileManager m_FileManager;
 FileSystem m_FileSystem;
+Shell m_Shell;
 int ERRNO;
 
 void ls()
 {
-
+	Inode pInode = CURRENT_DIR;
+	DirectoryEntry directoryEntry;
+	for (int i = 0; i < 10; i++)
+	{
+		Buf *pBuf = m_BufferManager.Bread(pInode.i_addr[i]);
+		for (int offset = 0; offset < Inode::BLOCK_SIZE; offset += sizeof(DirectoryEntry))
+		{
+			int* src = (int *)(pBuf->buffer + (offset % Inode::BLOCK_SIZE));
+			Utility::DWordCopy(src, (int *)&directoryEntry, sizeof(DirectoryEntry) / sizeof(int));
+			if (directoryEntry.m_ino != 0)
+				cout << directoryEntry.m_name << " ";
+		}
+		m_BufferManager.Brelse(pBuf);
+	}
+	cout << endl;
 }
-// int mode 1:read 2:write 3:read & write
+
+void cd(char *name)
+{
+	int i = m_FileManager.ChDir(name);
+	if (i == -1)
+		cout << "cd failed" << endl;
+}
+
 int fopen(char *name, int mode)
 {
-		int fmode;
+	int fmode;
 	switch (mode)
 	{
 	case 1:
@@ -49,15 +74,19 @@ void fclose(int fd)
 {
 	m_FileManager.Close(fd);
 }
-// int mode 1:read 2:write 3:read & write
+
 int fread(int fd, char *buffer, int length)
 {
 	int i = m_FileManager.Read(fd, buffer, length);
 	if (i < 0)
 		cout << "read failed" << endl;
-	return i;
+	else
+	{
+		cout << buffer << endl;
+		return i;
+	}
 }
-// int mode 1:read 2:write 3:read & write
+
 int fwrite(int fd, char *buffer, int length)
 {
 	int i = m_FileManager.Write(fd, buffer, length);
@@ -72,7 +101,7 @@ void flseek(int fd, int position)
 	if (i < 0)
 		cout << "seek failed" << endl;
 }
-// int mode 1:read 2:write 3:read & write
+
 int fcreat(char *name, int mode)
 {
 	int fmode;
@@ -105,36 +134,11 @@ int fdelete(char *name)
 	return i;
 }
 
-int test_m_BufferManager()
-{
-	for (int i = 1; i <= 15; i++)
-		m_BufferManager.Brelse(m_BufferManager.GetBlk(i));
-
-	return 0;
-}
 
 int main()
 {
 	m_FileSystem.LoadSuperBlock();
-	fcreat("/home/test.txt", 1);
-	if (fopen("/home/test.txt", 3) + 1)
-	{
-		//fclose(0);
-//		char *content = "djskfjsdklfjsdklfjksdlfjkl;sdajfka;lsdjfkl;asdjfkl;sadjfkl;sdjfkla;sdjfk;lsadjf";
-//		fwrite(0, content, strlen(content));
-		flseek(0, 0);
-		char buffer[512];
-		int read = fread(0, buffer, 748);
-		if (read >= 0)
-		{
-			buffer[read] = 0;
-			cout << "Read " << read << endl;
-			cout << buffer << endl;
-		}
-	}
-	//cout << fdelete("/home/test.txt") << endl;
-	char c;
-	cin >> c;
+	m_Shell.shell();
 	m_InodeTable.UpdateInodeTable();
 	return 0;
 }

@@ -85,6 +85,7 @@
     <ClInclude Include="File.h" />
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="OpenFileManager.h" />
+    <ClInclude Include="Shell.h" />
     <ClInclude Include="TestMyFileSystem.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
@@ -93,6 +94,7 @@
     <ClCompile Include="OpenFileManager.cpp" />
     <ClCompile Include="INode.cpp" />
     <ClCompile Include="FileSystem.cpp" />
+    <ClCompile Include="Shell.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="MyBuf.cpp" />

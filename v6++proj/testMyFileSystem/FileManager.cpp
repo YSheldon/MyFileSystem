@@ -13,6 +13,7 @@ FileManager::FileManager()
 	rootDirInode = new Inode();
 	rootDirInode->ICopy(buf, 0);
 	m_BufferManager.Brelse(buf);
+	CURRENT_PATH = "/";
 }
 
 FileManager::~FileManager()
@@ -398,7 +399,6 @@ Inode* FileManager::NameI(char(*func)(), enum DirectorySearchMode mode)
 		{
 			m_BufferManager.Brelse(pBuf);
 		}
-
 		/* 如果是删除操作，则返回父目录Inode，而要删除文件的Inode号在dirEntry.m_ino中 */
 		if (FileManager::DELETE == mode && '\0' == curchar)
 		{
@@ -475,7 +475,7 @@ void FileManager::WriteDir(Inode* pInode)
 
 void FileManager::SetCurDir(char* pathname)
 {
-	/* 路径不是从根目录'/'开始，则在现有u.u_curdir后面加上当前路径分量 */
+	/* 路径不是从根目录'/'开始，则在现有CURRENT_PATH后面加上当前路径分量 */
 	if (pathname[0] != '/')
 	{
 		int length = CURRENT_PATH.size();
@@ -504,6 +504,28 @@ int FileManager::ChDir(char *pathname)
 {
 	this->pathname = pathname;
 	Inode* pInode;
+	if (strcmp(pathname, "..") == 0) // cd .. fuck can read .. (todo)
+	{
+		int length = CURRENT_PATH.size();
+		if (length == 1) // 当前目录为root
+			return -1;
+		int i;
+		for (i = length - 1; i >= 0; i--)
+			if (CURRENT_PATH[i] == '/')
+				break;
+		if (i == 0) // 退回root
+		{
+			CURRENT_PATH = CURRENT_PATH.substr(0, 1);
+			CURRENT_DIR = *m_FileManager.rootDirInode;
+		}
+		else // 退回其他目录
+		{
+			CURRENT_PATH = CURRENT_PATH.substr(0, i);
+			strcpy(this->pathname,CURRENT_PATH.c_str());
+			CURRENT_DIR = *this->NameI(FileManager::NextChar, FileManager::OPEN);
+		}
+		return 0;
+	}
 
 	pInode = this->NameI(FileManager::NextChar, FileManager::OPEN);
 	if (NULL == pInode)

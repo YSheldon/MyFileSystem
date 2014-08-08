@@ -61,7 +61,7 @@ namespace Build
             DirFile etcDir = new DirFile(_superBlock, _inodeBlock, _dataBlock, _disk, "/etc");
             etcDir.CreateDirectory();
 
-            File file = new File(_superBlock, _inodeBlock, _dataBlock, _disk, "/home/test.txt");
+            File file = new File(_superBlock, _inodeBlock, _dataBlock, _disk, "/home/test");
             file.CreateFile();
 
             //WriteWholeDir();
